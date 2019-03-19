@@ -1,23 +1,24 @@
 import React, {Component} from 'react';
-import {View, Image, TouchableOpacity, Text} from 'react-native';
-import HomeStyles from './HomeStyles.js';
+import {View, Image, Text, TouchableOpacity } from 'react-native';
+import styles from './HomeStyles';
 
-export default class Home extends Component<Props> {
+export default class Home extends Component {
 
   goToHome(){
-
-    this.props.navigation.navigate('Task');
+    this.props.navigation.navigate('Tasks');
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.logo} source={ require('./../../img/remindMe-lLogo.png')}></Image>
-        <TouchableOpacity style={styles.button} onPress={this.goToHome.bind(this)} >
+        <Image style={styles.logo} source={ require('./../../images/remindMe-lLogo.png') }></Image>
+        <TouchableOpacity style={styles.button} onPress={ this.goToHome.bind(this) }>
           <Text style={styles.buttonText}>COMENZAR</Text>
         </TouchableOpacity>
-        <Image source={ require('./../../img/avatars.png')}><Image>
+        <Image source={ require('./../../images/avatars.png')}></Image>
       </View>
     );
   }
 }
+
+
